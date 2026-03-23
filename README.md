@@ -1,1 +1,1 @@
-# info2602-fastapi-l6
+# Info 2602 FastAPI Lab 6
