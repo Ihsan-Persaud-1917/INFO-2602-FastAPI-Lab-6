@@ -12,6 +12,7 @@ from app.utilities import flash
 from . import templates
 from app.pagination import Pagination
 
+
 admin_router = APIRouter(tags=["Admin App"])
 
 @admin_router.get("/admin")
@@ -31,7 +32,7 @@ def admin_page(request:Request, db:SessionDep, user:AdminDep, page: int = Query(
         db_qry = db_qry.where(
             Todo.done == False
         )
-    # Note that we on'y really care if "done" is true/false, anything else we ignore
+
     count_qry = select(func.count()).select_from(db_qry.subquery())
     count_todos = db.exec(count_qry).one()
 
